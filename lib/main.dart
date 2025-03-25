@@ -5,7 +5,9 @@ import 'package:mon_assessment/presentation/app_scaffold.dart';
 import 'package:mon_assessment/presentation/main/main_screen.dart';
 import 'package:mon_assessment/presentation/map/map_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await MapScreen.preloadMapStyle();
   runApp(const AppScaffold(child: MainScreen()));
 }
 
